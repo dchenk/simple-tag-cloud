@@ -12,15 +12,15 @@ Domain Path: /languages
 
 define('STC_OPTIONS_KEY', 'simple_tag_cloud');
 
-function azc_tc_load_plugin_textdomain(){
+function simple_tag_cloud_load_textdomain() {
 	load_plugin_textdomain('simple-tc', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 }
-add_action('plugins_loaded', 'azc_tc_load_plugin_textdomain');
+add_action('plugins_loaded', 'simple_tag_cloud_load_textdomain');
 
-function azc_tc_load_css(){
+function simple_tag_cloud_load_css() {
 	wp_enqueue_style('simple-tag-cloud', plugins_url( 'style.css', __FILE__ ) );
 }
-add_action('admin_enqueue_scripts', 'azc_tc_load_css');
+add_action('admin_enqueue_scripts', 'simple_tag_cloud_load_css');
 
 function simple_tag_cloud_default_options() {
 	if (get_option(STC_OPTIONS_KEY) === false) {
@@ -43,7 +43,7 @@ function stc_plugin_action_links($links) {
 }
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'stc_plugin_action_links');
 
-function azc_tc_settings() {
+function simple_tag_cloud_settings() {
 	if (!current_user_can('manage_options')) {
 		wp_die(__('You do not have sufficient permissions to access this page.', 'simple-tc'));
 	}
@@ -70,7 +70,7 @@ function azc_tc_settings() {
 					<div class='simple_tag_cloud_scroll'>
 						<?php
 							global $wpdb;
-							$query = "SELECT t.term_id AS `term_id`, t.name AS `name` FROM $wpdb->term_taxonomy tt INNER JOIN $wpdb->terms t On t.term_id = tt.term_id WHERE tt.taxonomy = 'post_tag' ORDER BY t.name";
+							$query = "SELECT t.term_id AS `term_id`, t.name AS `name` FROM $wpdb->term_taxonomy tt INNER JOIN $wpdb->terms t ON t.term_id = tt.term_id WHERE tt.taxonomy = 'post_tag' ORDER BY t.name";
 							$tags_list = $wpdb->get_results($query);
 							foreach($tags_list as $tag) {
 								echo '<label>' .
@@ -127,10 +127,10 @@ function azc_tc_settings() {
 	</div><?php
 }
 
-function azc_tc_admin_init() {
+function simple_tag_cloud_admin_init() {
 	add_action('admin_post_simple_tag_cloud_save_options', 'simple_tag_cloud_save' );
 }
-add_action('admin_init', 'azc_tc_admin_init' );
+add_action('admin_init', 'simple_tag_cloud_admin_init');
 
 function simple_tag_cloud_save() {
 	// Check that user has proper security level
@@ -276,7 +276,7 @@ class simple_tag_cloud extends WP_Widget {
 
 if (!function_exists('simple_tag_cloud_menu')) {
 	function simple_tag_cloud_menu() {
-		add_management_page('Simple Tag Cloud', 'Simple Tag Cloud', 'manage_options', 'stc-tag-cloud', 'azc_tc_settings');
+		add_management_page('Simple Tag Cloud', 'Simple Tag Cloud', 'manage_options', 'stc-tag-cloud', 'simple_tag_cloud_settings');
 	}
 	add_action('admin_menu', 'simple_tag_cloud_menu');
 }
