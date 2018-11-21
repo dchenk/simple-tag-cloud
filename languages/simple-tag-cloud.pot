@@ -1,0 +1,99 @@
+# Copyright (C) 2018 widerwebs
+# This file is distributed under the same license as the Simple Tag Cloud plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Tag Cloud 0.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-tag-cloud\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-11-21T21:17:58+00:00\n"
+"PO-Revision-Date: 2018-11-21T21:17:58+00:00\n"
+"X-Generator: WP-CLI 2.0.1\n"
+"X-Domain: simple-tc\n"
+
+#. Plugin Name of the plugin
+msgid "Simple Tag Cloud"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/dchenk/simple-tag-cloud"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds a widget for displaying a customized tag cloud."
+msgstr ""
+
+#. Author of the plugin
+msgid "widerwebs"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/dchenk"
+msgstr ""
+
+#: simple-tag-cloud.php:48
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: simple-tag-cloud.php:56
+msgid "Settings"
+msgstr ""
+
+#: simple-tag-cloud.php:67
+msgid "After you save the settings, make sure you place the Simple Tag Cloud widget in a widget area."
+msgstr ""
+
+#: simple-tag-cloud.php:84
+msgid "Smallest Font Size"
+msgstr ""
+
+#: simple-tag-cloud.php:86
+msgid "The size of the tag with the lowest count value"
+msgstr ""
+
+#: simple-tag-cloud.php:88
+msgid "Largest Font Size"
+msgstr ""
+
+#: simple-tag-cloud.php:90
+msgid "The size of the tag with the highest count value"
+msgstr ""
+
+#: simple-tag-cloud.php:92
+msgid "Unit"
+msgstr ""
+
+#: simple-tag-cloud.php:98
+msgid "Unit of measure for the font size values"
+msgstr ""
+
+#: simple-tag-cloud.php:100
+msgid "Number of Tags"
+msgstr ""
+
+#: simple-tag-cloud.php:102
+msgid "The number of tags to display in the cloud"
+msgstr ""
+
+#: simple-tag-cloud.php:104
+msgid "Cloud Layout"
+msgstr ""
+
+#: simple-tag-cloud.php:110
+msgid "Order By"
+msgstr ""
+
+#: simple-tag-cloud.php:116
+msgid "Sort Order"
+msgstr ""
+
+#: simple-tag-cloud.php:138
+msgid "You do not have permissions to perform this action"
+msgstr ""
+
+#: simple-tag-cloud.php:212
+msgid "A customizable cloud of your tags."
+msgstr ""
