@@ -219,7 +219,7 @@ class simple_tag_cloud extends WP_Widget {
 	// Render options form.
 	function form($instance) {
 		// Retrieve previous values from instance or set default values if not present.
-		$widget_title = (!empty($instance['simple_tag_cloud_title']) ? esc_attr( $instance['simple_tag_cloud_title'] ) : 'Tag Cloud');
+		$widget_title = (!empty($instance['simple_tag_cloud_title']) ? esc_attr( $instance['simple_tag_cloud_title'] ) : '');
 		$field_id = $this->get_field_id('simple_tag_cloud_title');
 		?>
 		<p>
@@ -233,16 +233,15 @@ class simple_tag_cloud extends WP_Widget {
 
 	// Function to perform user input validation.
 	function update($new_instance, $old_instance) {
-		$instance = $old_instance;
-		$instance['simple_tag_cloud_title'] = strip_tags( $new_instance['simple_tag_cloud_title'] );
-		return $instance;
+		$old_instance['simple_tag_cloud_title'] = strip_tags($new_instance['simple_tag_cloud_title']);
+		return $old_instance;
 	}
 
 	// Function to display widget contents.
 	function widget($args, $instance) {
 		echo $args['before_widget'];
 		echo $args['before_title'];
-		$widget_title = !empty($instance['simple_tag_cloud_title']) ? esc_attr($instance['simple_tag_cloud_title']) : 'Tag Cloud';
+		$widget_title = !empty($instance['simple_tag_cloud_title']) ? esc_attr($instance['simple_tag_cloud_title']) : '';
 		echo apply_filters('widget_title', $widget_title);
 		echo $args['after_title'];
 
