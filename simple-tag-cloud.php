@@ -82,11 +82,11 @@ function simple_tag_cloud_settings() {
 					</div>
 				</td></tr>
 				<tr><th scope="row"><label for="smallest"><?php _e('Smallest Font Size', 'simple-tc'); ?></label></th><td>
-					<input type="text" name="smallest" value="<?php echo esc_html( stripslashes($options['smallest']) ); ?>" class="small-text">
+					<input type="number" name="smallest" value="<?php echo esc_html( stripslashes($options['smallest']) ); ?>" class="small-text">
 					<p class="description"><?php _e('The size of the tag with the lowest count value', 'simple-tc'); ?></p>
 				</td></tr>
 				<tr><th scope="row"><label for="largest"><?php _e('Largest Font Size', 'simple-tc'); ?></label></th><td>
-					<input type="text" name="largest" value="<?php echo esc_html( stripslashes($options['largest']) ); ?>" class="small-text">
+					<input type="number" name="largest" value="<?php echo esc_html( stripslashes($options['largest']) ); ?>" class="small-text">
 					<p class="description"><?php _e('The size of the tag with the highest count value', 'simple-tc'); ?></p>
 				</td></tr>
 				<tr><th scope="row"><label for="unit"><?php _e('Unit', 'simple-tc'); ?></label></th><td>
@@ -98,7 +98,7 @@ function simple_tag_cloud_settings() {
 					<p class="description"><?php _e('Unit of measure for the font size values', 'simple-tc'); ?></p>
 				</td></tr>
 				<tr><th scope="row"><label for="number"><?php _e('Number of Tags', 'simple-tc'); ?></label></th><td>
-					<input type="text" name="number" value="<?php echo esc_html( stripslashes($options['number']) ); ?>" class="small-text">
+					<input type="number" name="number" value="<?php echo esc_html( stripslashes($options['number']) ); ?>" class="small-text">
 					<p class="description"><?php _e('The number of tags to display in the cloud', 'simple-tc'); ?></p>
 				</td></tr>
 				<tr><th scope="row"><label for="format"><?php _e('Cloud Layout', 'simple-tc'); ?></label></th><td>
@@ -217,20 +217,17 @@ class simple_tag_cloud extends WP_Widget {
 	}
 
 	// Render options form.
-	function form( $instance ) {
+	function form($instance) {
 		// Retrieve previous values from instance or set default values if not present.
 		$widget_title = (!empty($instance['simple_tag_cloud_title']) ? esc_attr( $instance['simple_tag_cloud_title'] ) : 'Tag Cloud');
+		$field_id = $this->get_field_id('simple_tag_cloud_title');
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'simple_tag_cloud_title' ); ?>">
-			<?php echo 'Widget Title:'; ?>
-			<input type="text"
-				id="<?php echo $this->get_field_id( 'simple_tag_cloud_title' ); ?>"
-				name="<?php echo $this->get_field_name( 'simple_tag_cloud_title' ); ?>"
-				value="<?php echo $widget_title; ?>">
-			</label>
+			<label for="<?php echo $field_id ?>"><?php _e('Title:', 'simple-tc'); ?></label>
+			<input type="text" id="<?php echo $field_id; ?>"
+				name="<?php echo $this->get_field_name('simple_tag_cloud_title'); ?>"
+				value="<?php echo $widget_title; ?>" class="widefat">
 		</p>
-
 		<?php
 	}
 
