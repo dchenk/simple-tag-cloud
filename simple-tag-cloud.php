@@ -3,7 +3,7 @@
 Plugin Name: Simple Tag Cloud
 Plugin URI: https://github.com/dchenk/simple-tag-cloud
 Description: Adds a widget for displaying a customized tag cloud.
-Version: 0.9.0
+Version: 0.9.1
 Author: widerwebs
 Author URI: https://github.com/dchenk
 Text Domain: simple-tc
@@ -203,17 +203,10 @@ add_action('widgets_init', 'simple_tag_cloud_create_widget' );
 
 // Widget implementation class.
 class simple_tag_cloud extends WP_Widget {
-	// Constructor function
+	// Constructor function.
 	function __construct() {
-		add_action( 'wp_enqueue_scripts', [$this, 'enqueue']);
-
-		// Widget creation function
 		parent::__construct('simple_tag_cloud', 'Simple Tag Cloud',
 			['description' => __('A customizable cloud of your tags.', 'simple-tc')]);
-	}
-
-	public function enqueue() {
-		wp_enqueue_style( 'simple-tc', plugins_url( 'style.css', __FILE__ ), '', '1.0.0' );
 	}
 
 	// Render options form.
@@ -247,13 +240,13 @@ class simple_tag_cloud extends WP_Widget {
 
 		$options = get_option(STC_OPTIONS_KEY, []);
 		$args = [
-			'smallest'  => $options['smallest'],
-			'largest'   => $options['largest'],
-			'unit'      => $options['unit'],
-			'number'    => $options['number'],
-			'format'    => $options['format'],
-			'orderby'   => strtolower($options['orderby']),
-			'order'     => strtoupper($options['order'])
+			'smallest' => $options['smallest'],
+			'largest'  => $options['largest'],
+			'unit'     => $options['unit'],
+			'number'   => $options['number'],
+			'format'   => $options['format'],
+			'orderby'  => strtolower($options['orderby']),
+			'order'    => strtoupper($options['order'])
 		];
 
 		if (is_array($options['tag'])) {
@@ -275,13 +268,6 @@ if (!function_exists('simple_tag_cloud_menu')) {
 		add_management_page('Simple Tag Cloud', 'Simple Tag Cloud', 'manage_options', 'stc-tag-cloud', 'simple_tag_cloud_settings');
 	}
 	add_action('admin_menu', 'simple_tag_cloud_menu');
-}
-
-if (!function_exists('simple_tag_cloud_css')) {
-	function simple_tag_cloud_admin_css() {
-		wp_enqueue_style('simple-tag-cloud-admin', plugins_url('admin-style.css', __FILE__));
-	}
-	add_action('admin_head', 'simple_tag_cloud_admin_css');
 }
 
 function simple_tag_cloud_uninstall() {
