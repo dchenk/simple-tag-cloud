@@ -19,7 +19,7 @@ function simple_tag_cloud_defaults(): array {
 		'unit' => 'pt',
 		'number' => '45',
 		'format' => 'flat',
-		'orderby' => 'Name',
+		'orderby' => 'name',
 		'order' => 'ASC',
 	];
 }
@@ -31,7 +31,7 @@ function simple_tag_cloud_load_textdomain() {
 add_action('plugins_loaded', 'simple_tag_cloud_load_textdomain');
 
 function simple_tag_cloud_set_defaults() {
-	if (get_option(STC_OPTIONS_KEY) === false) {
+	if (!get_option(STC_OPTIONS_KEY)) {
 		add_option(STC_OPTIONS_KEY, simple_tag_cloud_defaults());
 	}
 }
@@ -267,11 +267,11 @@ class simple_tag_cloud extends WP_Widget {
 	public function widget($args, $instance) {
 		echo $args['before_widget'];
 		echo $args['before_title'];
-		$widget_title = !empty($instance['simple_tag_cloud_title']) ? esc_attr($instance['simple_tag_cloud_title']) : '';
-		echo apply_filters('widget_title', $widget_title);
+		$title = !empty($instance['simple_tag_cloud_title']) ? esc_attr($instance['simple_tag_cloud_title']) : '';
+		echo apply_filters('widget_title', $title);
 		echo $args['after_title'];
 
-		$options = get_option(STC_OPTIONS_KEY, []);
+		$options = get_option(STC_OPTIONS_KEY, simple_tag_cloud_defaults());
 		$options['orderby'] = strtolower($options['orderby']);
 		$options['order'] = strtoupper($options['order']);
 
@@ -284,7 +284,7 @@ class simple_tag_cloud extends WP_Widget {
 			unset($options['tag']);
 		}
 		// Outside of if statement to display when set to exclude but nothing excluded.
-		wp_tag_cloud($args);
+		wp_tag_cloud($options);
 
 		echo $args['after_widget'];
 	}
