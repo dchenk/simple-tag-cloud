@@ -44,12 +44,12 @@ function simple_tag_cloud_load_css() {
 
 add_action('admin_enqueue_scripts', 'simple_tag_cloud_load_css');
 
-function stc_plugin_action_links($links) {
+function simple_tag_cloud_action_links($links) {
 	array_unshift($links, '<a href="' . admin_url('tools.php?page=stc-tag-cloud') . '">Settings</a>');
 	return $links;
 }
 
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'stc_plugin_action_links');
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'simple_tag_cloud_action_links');
 
 function simple_tag_cloud_settings() {
 	if (!current_user_can('manage_options')) {

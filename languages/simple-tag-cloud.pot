@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-12-01T00:33:37+00:00\n"
-"PO-Revision-Date: 2018-12-01T00:33:37+00:00\n"
+"POT-Creation-Date: 2018-12-06T05:50:44+00:00\n"
+"PO-Revision-Date: 2018-12-06T05:50:44+00:00\n"
 "X-Generator: WP-CLI 2.0.1\n"
 "X-Domain: simple-tc\n"
 
@@ -34,70 +34,70 @@ msgstr ""
 msgid "https://github.com/dchenk"
 msgstr ""
 
-#: simple-tag-cloud.php:48
+#: simple-tag-cloud.php:56
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: simple-tag-cloud.php:56
+#: simple-tag-cloud.php:66
 msgid "Settings"
 msgstr ""
 
-#: simple-tag-cloud.php:67
+#: simple-tag-cloud.php:78
 msgid "After you save the settings, make sure you place the Simple Tag Cloud widget in a widget area."
 msgstr ""
 
-#: simple-tag-cloud.php:84
+#: simple-tag-cloud.php:97
 msgid "Smallest Font Size"
 msgstr ""
 
-#: simple-tag-cloud.php:86
+#: simple-tag-cloud.php:101
 msgid "The size of the tag with the lowest count value"
 msgstr ""
 
-#: simple-tag-cloud.php:88
+#: simple-tag-cloud.php:105
 msgid "Largest Font Size"
 msgstr ""
 
-#: simple-tag-cloud.php:90
+#: simple-tag-cloud.php:109
 msgid "The size of the tag with the highest count value"
 msgstr ""
 
-#: simple-tag-cloud.php:92
+#: simple-tag-cloud.php:113
 msgid "Unit"
 msgstr ""
 
-#: simple-tag-cloud.php:98
+#: simple-tag-cloud.php:120
 msgid "Unit of measure for the font size values"
 msgstr ""
 
-#: simple-tag-cloud.php:100
+#: simple-tag-cloud.php:124
 msgid "Number of Tags"
 msgstr ""
 
-#: simple-tag-cloud.php:102
+#: simple-tag-cloud.php:128
 msgid "The number of tags to display in the cloud"
 msgstr ""
 
-#: simple-tag-cloud.php:104
+#: simple-tag-cloud.php:132
 msgid "Cloud Layout"
 msgstr ""
 
-#: simple-tag-cloud.php:110
+#: simple-tag-cloud.php:141
 msgid "Order By"
 msgstr ""
 
-#: simple-tag-cloud.php:116
+#: simple-tag-cloud.php:150
 msgid "Sort Order"
 msgstr ""
 
-#: simple-tag-cloud.php:138
+#: simple-tag-cloud.php:175
 msgid "You do not have permissions to perform this action"
 msgstr ""
 
-#: simple-tag-cloud.php:209
+#: simple-tag-cloud.php:242
 msgid "A customizable cloud of your tags."
 msgstr ""
 
-#: simple-tag-cloud.php:219
+#: simple-tag-cloud.php:252
 msgid "Title:"
 msgstr ""
