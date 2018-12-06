@@ -3,7 +3,7 @@
 Plugin Name: Simple Tag Cloud
 Plugin URI: https://github.com/dchenk/simple-tag-cloud
 Description: Adds a widget for displaying a customized tag cloud.
-Version: 0.9.1
+Version: 0.10.0
 Author: widerwebs
 Author URI: https://github.com/dchenk
 Text Domain: simple-tc
